@@ -1,36 +1,54 @@
 .navbar {
-  height: 64px;
-  background: var(--nav-bg);
+  height: 60px;
+  background: linear-gradient(to right, #0f172a, #1e3a8a);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 32px;
+  align-items: center;
+  padding: 0 25px;
   color: white;
 }
 
-.logo {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+.left h3 {
+  margin: 0;
 }
 
 .right {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 18px;
 }
 
 .icon {
   cursor: pointer;
-  opacity: 0.85;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: 0.3s ease;
 }
 
 .icon:hover {
-  opacity: 1;
-  transform: scale(1.1);
+  color: #60a5fa;
+}
+.profile-wrapper {
+  position: relative;
 }
 
-.logout {
-  color: #f87171;
+.profile-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 150px;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  overflow: hidden;
+  z-index: 2000;
+}
+
+.profile-menu div {
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-menu div:hover {
+  background: #f1f5f9;
 }

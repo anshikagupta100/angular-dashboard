@@ -1,19 +1,20 @@
 .sidebar {
+  position: fixed;
+  top: 60px;              /* BELOW navbar */
+  left: 0;
   width: 260px;
-  height: 100%;
+  height: calc(100vh - 60px);  /* full remaining height */
   background: linear-gradient(180deg, #0f172a, #020617);
   color: #e5e7eb;
   padding-top: 24px;
 }
 
-/* Menu List */
 .menu {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Menu Items */
 .menu li {
   display: flex;
   align-items: center;
@@ -25,7 +26,6 @@
   transition: all 0.2s ease;
 }
 
-/* Hover Effect */
 .menu li:hover {
   background: rgba(255, 255, 255, 0.08);
 }

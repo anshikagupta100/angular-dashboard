@@ -1,14 +1,22 @@
-<div class="page-header">
-  <h1>Logs / Activity</h1>
-  <p class="subtitle">System audit trail</p>
-</div>
+<div class="logs-container">
 
-<div class="card">
-  <ul class="log-list">
-    <li *ngFor="let log of logs">
-      <strong>{{ log.action }}</strong>
-      <span>{{ log.user }}</span>
-      <span class="time">{{ log.time }}</span>
-    </li>
-  </ul>
+  <h2 class="page-title">Activity Logs</h2>
+
+  <div class="log-card"
+       *ngFor="let log of logs"
+       [ngClass]="log.level">
+
+    <div class="left">
+      <span class="material-icons icon">
+        {{ log.level === 'success' ? 'check_circle' :
+           log.level === 'error' ? 'error' : 'info' }}
+      </span>
+
+      <span class="message">{{ log.message }}</span>
+    </div>
+
+    <span class="time">{{ log.time }}</span>
+
+  </div>
+
 </div>

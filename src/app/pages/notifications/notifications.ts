@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-notifications',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './notifications.html',
   styleUrls: ['./notifications.css']
 })
@@ -10,33 +12,19 @@ export class NotificationsComponent {
 
   notifications = [
     {
-      title: 'New user registered',
-      message: 'John Doe has successfully registered.',
-      time: '2 minutes ago',
-      type: 'info',
-      unread: true
+      message: 'New order received from client',
+      time: '2 mins ago',
+      type: 'success'
     },
     {
-      title: 'System update completed',
-      message: 'The system update was completed successfully.',
-      time: '1 hour ago',
-      type: 'success',
-      unread: false
+      message: 'System update available',
+      time: '10 mins ago',
+      type: 'info'
     },
     {
-      title: 'Password changed',
-      message: 'Admin password was changed.',
-      time: 'Yesterday',
-      type: 'warning',
-      unread: false
-    },
-    {
-      title: 'Multiple failed login attempts',
-      message: 'Suspicious login activity detected.',
-      time: '2 days ago',
-      type: 'error',
-      unread: true
+      message: 'Payment failed for Order #2451',
+      time: '30 mins ago',
+      type: 'error'
     }
   ];
-
 }

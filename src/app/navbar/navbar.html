@@ -1,30 +1,34 @@
-<nav class="navbar">
+<div class="navbar">
 
-  <!-- LEFT -->
   <div class="left">
-    <span class="logo">Angular Dashboard</span>
+    <h3>Admin Dashboard</h3>
   </div>
 
-  <!-- RIGHT -->
   <div class="right">
 
-    <!-- Search -->
-    <mat-icon class="icon">search</mat-icon>
+    <span class="material-icons icon">search</span>
 
-    <!-- Theme Toggle -->
-    <mat-icon class="icon" (click)="toggleTheme()">
-      {{ isDark ? 'light_mode' : 'dark_mode' }}
-    </mat-icon>
+    <span class="material-icons icon"
+          (click)="toggleTheme()">
+      {{ themeService.isDarkMode() ? 'light_mode' : 'dark_mode' }}
+    </span>
 
-    <!-- Notifications -->
-    <mat-icon class="icon">notifications</mat-icon>
+    <span class="material-icons icon">notifications</span>
 
-    <!-- User -->
-    <mat-icon class="icon">account_circle</mat-icon>
+    <!-- Profile Icon -->
+    <div class="profile-wrapper">
+      <span class="material-icons icon"
+            (click)="toggleProfileMenu()">
+        account_circle
+      </span>
 
-    <!-- Logout -->
-    <mat-icon class="icon logout" (click)="logout()">logout</mat-icon>
+      <!-- Dropdown -->
+      <div class="profile-menu" *ngIf="showProfileMenu">
+        <div (click)="goToSettings()">Settings</div>
+        <div (click)="logout()">Logout</div>
+      </div>
+    </div>
 
   </div>
 
-</nav>
+</div>

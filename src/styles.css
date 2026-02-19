@@ -29,3 +29,45 @@
 
   --border: #1e293b;
 }
+/* Smooth transition */
+body {
+  transition: all 0.3s ease;
+}
+
+/* DARK MODE */
+
+.dark-mode {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .sidebar {
+  background: #111827 !important;
+}
+
+.dark-mode .navbar {
+  background: #111827 !important;
+}
+
+.dark-mode .card,
+.dark-mode .log-card,
+.dark-mode .notification-card,
+.dark-mode .report-card,
+.dark-mode .login-card {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+.dark-mode table {
+  background-color: #1e293b !important;
+  color: white !important;
+}
+
+.dark-mode input {
+  background-color: #334155 !important;
+  color: white !important;
+}
+
+.dark-mode .page-title {
+  color: #93c5fd !important;
+}

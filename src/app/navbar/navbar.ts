@@ -1,23 +1,19 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [CommonModule],
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.css']
 })
 export class NavbarComponent {
 
-  isDark = false;
+  constructor(public themeService: ThemeService) {}
 
   toggleTheme() {
-    this.isDark = !this.isDark;
-    document.body.classList.toggle('dark-theme');
-  }
-
-  logout() {
-    console.log('Logout clicked');
+    this.themeService.toggleTheme();
   }
 }
