@@ -14,15 +14,11 @@
     </span>
 
     <span class="material-icons icon">notifications</span>
-
-    <!-- Profile Icon -->
     <div class="profile-wrapper">
       <span class="material-icons icon"
             (click)="toggleProfileMenu()">
         account_circle
       </span>
-
-      <!-- Dropdown -->
       <div class="profile-menu" *ngIf="showProfileMenu">
         <div (click)="goToSettings()">Settings</div>
         <div (click)="logout()">Logout</div>

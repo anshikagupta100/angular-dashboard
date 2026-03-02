@@ -16,10 +16,8 @@ import { AuthGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
 
-  // Public route
   { path: 'login', component: LoginComponent },
 
-  // Protected routes
   {
     path: '',
     component: LayoutComponent,
@@ -27,9 +25,22 @@ export const routes: Routes = [
     children: [
 
       { path: 'dashboard', component: DashboardComponent },
+
       { path: 'analytics', component: AnalyticsComponent },
-      { path: 'users', component: UsersComponent },
-      { path: 'reports', component: ReportsComponent },
+      { 
+        path: 'users', 
+        component: UsersComponent,
+        canActivate: [AuthGuard],
+        data: { role: 'admin' }
+      },
+
+      { 
+        path: 'reports', 
+        component: ReportsComponent,
+        canActivate: [AuthGuard],
+        data: { role: 'admin' }
+      },
+
       { path: 'notifications', component: NotificationsComponent },
       { path: 'logs', component: LogsComponent },
       { path: 'settings', component: SettingsComponent },
@@ -39,6 +50,5 @@ export const routes: Routes = [
     ]
   },
 
-  // Fallback
   { path: '**', redirectTo: 'login' }
 ];

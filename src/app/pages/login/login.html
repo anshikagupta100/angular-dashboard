@@ -4,27 +4,32 @@
 
     <h2>Welcome Back</h2>
     <p class="subtitle">Login to access dashboard</p>
-
     <input 
       type="text"
       placeholder="Username"
       [(ngModel)]="username"
     />
-
     <input 
       type="password"
       placeholder="Password"
       [(ngModel)]="password"
     />
-
     <button (click)="onLogin()">Login</button>
-
     <p class="error" *ngIf="error">{{ error }}</p>
-
-    <div class="demo">
+    <div class="demo-box">
       <p class="demo-title">Demo Credentials</p>
-      <p>Username: <strong>admin</strong></p>
-      <p>Password: <strong>admin123</strong></p>
+
+      <div class="demo-item">
+        <strong>Admin</strong><br>
+        Username: admin<br>
+        Password: admin123
+      </div>
+
+      <div class="demo-item">
+        <strong>User</strong><br>
+        Username: user<br>
+        Password: user123
+      </div>
     </div>
 
   </div>
